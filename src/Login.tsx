@@ -4,6 +4,7 @@ import Logo from './assets/Logo.png'
 import Title from './components/Title';
 import Botao from './components/Button';
 import EntradaText from './components/Input';
+import React from 'react';
 
 export default function Login(){
     return(
