@@ -5,8 +5,9 @@ import Title from './components/Title';
 import Botao from './components/Button';
 import EntradaText from './components/Input';
 import React from 'react';
+import Cadastro from './Cadastro';
 
-export default function Login(){
+export default function Login({ navigation }){
     return(
         <VStack flex={1} alignItems="center" padding={5} justifyContent="center">
             <Image  source={Logo} alt='Logo Voll'/>
@@ -27,7 +28,7 @@ export default function Login(){
                 />
             </Box>
 
-            <Botao>
+            <Botao onPress={() => navigation.navigate('Tabs')}>
                 Entrar
             </Botao>
 
@@ -38,7 +39,7 @@ export default function Login(){
             <Box width="100%" flexDirection="row" justifyContent="center" marginTop={8}>
                 <Text>Ainda não tem cadastro? </Text>
 
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
                     <Text color="blue.500">
                         Faça seu cadastro!
                     </Text>
