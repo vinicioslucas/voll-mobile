@@ -18,21 +18,25 @@ const screenOptions = {
 
 const tabs = [
     {
+        id: 1,
         name: 'Início',
         component: Home,
         icon: 'home'
     },
     {
+        id: 2,
         name: 'Consultas',
         component: Consultas,
         icon: 'calendar'
     },
     {
+        id: 3,
         name: 'Explorar',
         component: Explorar,
         icon: 'search'
     },
     {
+        id: 4,
         name: 'Perfil',
         component: Perfil,
         icon: 'person'
@@ -44,7 +48,7 @@ export default function Tabs(){
         <Tab.Navigator screenOptions={screenOptions}>
             {tabs.map((tab) => (
                 <Tab.Screen 
-                key={tab.name} 
+                key={tab.id} 
                 name={tab.name} 
                 component={tab.component} 
                 options={{headerShown: false, tabBarIcon: ({color, size}) => (<Ionicons name={tab.icon} color={color} size={size} />)}}/>) )}

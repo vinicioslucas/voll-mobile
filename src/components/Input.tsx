@@ -5,10 +5,11 @@ interface InputProps {
     label?: string,
     placeholder: string,
     secureTextEntry?: boolean,
-    leftIcon?: React.ReactNode
+    value?: string,
+    onChangeText?: (text: string) => void;
 }
 
-export default function EntradaText({label, placeholder, secureTextEntry = false} : InputProps) : JSX.Element {
+export default function EntradaText({label, placeholder, secureTextEntry = false, value, onChangeText} : InputProps) : JSX.Element {
     return(
         <FormControl marginTop={3}>{label && <FormControl.Label>{label}</FormControl.Label>}
             <Input 
@@ -19,6 +20,8 @@ export default function EntradaText({label, placeholder, secureTextEntry = false
             backgroundColor="gray.100"
             secureTextEntry={secureTextEntry}
             shadow={3}
+            value={value}
+            onChangeText={onChangeText}
             />
         </FormControl>
     );

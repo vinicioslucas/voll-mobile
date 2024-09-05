@@ -1,7 +1,8 @@
 import { NativeBaseProvider, StatusBar } from 'native-base';
 import { themes } from "./src/styles/themes";
-import React from "react";
+import React, { useEffect } from "react";
 import Routes from './src/Routes';
+
 
 export default function App() {
   return (
