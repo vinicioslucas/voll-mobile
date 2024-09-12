@@ -23,3 +23,14 @@ export async function PegarDadosPaciente(id: string) {
         return null
     }
 }
+
+export async function PegarConsultasPaciente(id: string) {
+    try {
+        const resultado = await api.get(`/paciente/${id}/consultas`)
+        return resultado.data
+    } catch (error) {
+        console.log(error)
+        return null
+    }
+}
+
