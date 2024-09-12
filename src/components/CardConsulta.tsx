@@ -9,7 +9,8 @@ interface CardProps{
     especialidade: string,
     data?: string,
     foiAtendido?: boolean,
-    foiAgendado?: boolean
+    foiAgendado?: boolean,
+    onPress?: () => void,
 }
 
 export function CardConsulta({
@@ -18,12 +19,13 @@ export function CardConsulta({
     especialidade,
     data,
     foiAgendado,
-    foiAtendido
+    foiAtendido,
+    onPress
 }: CardProps){
     return(
         <VStack marginBottom={5} width="100%" backgroundColor={foiAtendido ? 'blue.100' : 'white' } p="5" borderRadius="lg" shadow="2">
             <VStack flexDirection="row" >
-                <Avatar size="xl" source={galego}/>
+                <Avatar size="xl" source={{uri: foto}}/>
 
                 <VStack paddingLeft="4">
                     <Text fontSize="md" fontWeight="bold">{nome}</Text>
@@ -33,7 +35,7 @@ export function CardConsulta({
             </VStack>
             
 
-            <Botao mt={4}>
+            <Botao mt={4} onPress={onPress}>
                 {
                     foiAgendado ? 'Cancelar ' : 'Agendar consulta'
                 }
